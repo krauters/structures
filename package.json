@@ -1,7 +1,7 @@
 {
 	"name": "@krauters/structures",
 	"description": "Common TypeScript types, enums, and interfaces to standardize structures across projects.",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"main": "dist/index.js",
 	"type": "commonjs",
 	"scripts": {
