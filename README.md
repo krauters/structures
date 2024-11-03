@@ -1,28 +1,89 @@
-# Typescript Core
-A TypeScript Repository that stands as a starting point for all other TypeScript repositories.
+<div align="center">
 
-## Husky
+<a href="https://www.linkedin.com/in/coltenkrauter/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+![License](https://img.shields.io/github/license/krauters/structures)
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=krauters.structures)
 
-Husky helps manage Git hooks easily, automating things like running tests or linting before a commit is made. This ensures your code is in good shape.
+![Version](https://img.shields.io/github/v/release/krauters/structures)
+[![npm version](https://img.shields.io/npm/v/@krauters/structures.svg?style=flat-square)](https://www.npmjs.org/package/@krauters/structures)
+![GitHub Stars](https://img.shields.io/github/stars/krauters/structures)
+![Forks](https://img.shields.io/github/forks/krauters/structures)
 
-Pre-commit hooks run scripts before a commit is finalized to catch issues or enforce standards. With Husky, setting up these hooks across your team becomes easy, keeping your codebase clean and consistent.
+![GitHub Issues](https://img.shields.io/github/issues/krauters/structures)
+![Open PRs](https://img.shields.io/github/issues-pr/krauters/structures)
+![Commits per Month](https://img.shields.io/github/commit-activity/m/krauters/structures)
+![Contributors](https://img.shields.io/github/contributors/krauters/structures)
+![Last Commit](https://img.shields.io/github/last-commit/krauters/structures)
 
-### Our Custom Pre-Commit Hook
+[![Install Size](https://img.shields.io/badge/dynamic/json?url=https://packagephobia.com/v2/api.json?p=@krauters/structures&query=$.install.pretty&label=install%20size&style=flat-square)](https://packagephobia.now.sh/result?p=@krauters/structures)
+![Code Size](https://img.shields.io/github/languages/code-size/krauters/structures)
+![Repo Size](https://img.shields.io/github/repo-size/krauters/structures)
 
-This project uses a custom pre-commit hook to run `npm run bundle`. This ensures that our bundled assets are always up to date before any commit (which is especially important for TypeScript GitHub Actions). Husky automates this, so no commits will go through without a fresh bundle, keeping everything streamlined.
+</div>
+
+# @krauters/structures
+
+`@krauters/structures` is a TypeScript library providing robust and well-defined enums, interfaces, and types for common structures in modern applications. It’s built to simplify shared data modeling, enhance type safety, and support consistent code standards across projects.
+
+## Usage
+
+This library is particularly useful for projects needing a shared set of structures, enums, and data models. For instance:
+
+```ts
+import { HttpStatus, LanguageCode, Env } from '@krauters/structures'
+
+// Example usage
+const currentEnv: Env = Env.Production
+
+if (currentEnv === Env.Development) {
+    console.log('Running in development mode')
+}
+
+function handleResponse(status: HttpStatus) {
+    if (status === HttpStatus.Ok) {
+        console.log('Request succeeded!')
+    } else if (status === HttpStatus.NotFound) {
+        console.error('Resource not found')
+    }
+}
+```
+
+## Installation
+
+Add `@krauters/structures` to your project:
+
+```zsh
+npm install @krauters/structures@latest
+```
+
+## Overview
+
+`@krauters/structures` provides various enums and types for structuring application data. The core elements include:
+
+- **Environment (Env)**: Enums for standard environment types like `Development`, `Production`, and `Pipeline`.
+- **HTTP Status Codes (HttpStatus)**: Enums for common HTTP statuses (e.g., `Ok`, `NotFound`, `InternalServerError`).
+- **Language Codes (LanguageCode)**: ISO language codes for major languages, making localization simple.
+- **File Metadata (FileExtension, FileEncoding)**: Standard file extensions and encoding types for easier file handling.
+- **Response Types (ResponseType)**: Defines response formats such as `json`, `blob`, and `text`.
+
+These structures help keep code clean and predictable, while TypeScript’s type-checking reduces errors.
 
 ## Contributing
 
-The goal of this project is to continually evolve and improve its core features, making it more efficient and easier to use. Development happens openly here on GitHub, and we’re thankful to the community for contributing bug fixes, enhancements, and fresh ideas. Whether you're fixing a small bug or suggesting a major improvement, your input is invaluable.
+We’re always looking to improve this library. Contributions are welcome, whether it’s adding new structures, improving existing ones, or updating documentation. Please open an issue or pull request if you’d like to contribute!
 
 ## License
 
-This project is licensed under the ISC License. Please see the [LICENSE](./LICENSE) file for more details.
+Licensed under the ISC License. For more information, see the [LICENSE](./LICENSE) file.
 
-## 🥂 Thanks Contributors
+## 🥂 Thanks, Contributors!
 
-Thanks for spending time on this project.
+Special thanks to all who’ve helped improve this project.
 
-<a href="https://github.com/krauters/typescript-core/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=krauters/typescript-core" />
+<a href="https://github.com/krauters/structures/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=krauters/structures" />
 </a>
+
+<br />
+<br />
+<a href="https://www.buymeacoffee.com/coltenkrauter"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=coltenkrauter&button_colour=FFDD00&font_colour=```&font_family=Cookie&outline_colour=```&coffee_colour=ffffff" /></a>
