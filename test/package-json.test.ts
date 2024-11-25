@@ -1,16 +1,17 @@
-import { describe, it, expect } from '@jest/globals'
-import { PackageJson, Person, Repository, Bugs, PublishConfig, Dependencies } from '../src/package-json'
+import { describe, expect, it } from '@jest/globals'
+
+import type { Bugs, Dependencies, PackageJson, Person, PublishConfig, Repository } from '../src/package-json'
 
 describe('PackageJson Structure', () => {
 	it('should define correct structure for author field', () => {
 		const author: Person = {
-			name: 'John Doe',
 			email: 'johndoe@example.com',
+			name: 'John Doe',
 			url: 'https://example.com',
 		}
 		expect(author).toEqual({
-			name: 'John Doe',
 			email: 'johndoe@example.com',
+			name: 'John Doe',
 			url: 'https://example.com',
 		})
 	})
@@ -28,12 +29,12 @@ describe('PackageJson Structure', () => {
 
 	it('should define correct structure for bugs field', () => {
 		const bugs: Bugs = {
-			url: 'https://github.com/example/repo/issues',
 			email: 'support@example.com',
+			url: 'https://github.com/example/repo/issues',
 		}
 		expect(bugs).toEqual({
-			url: 'https://github.com/example/repo/issues',
 			email: 'support@example.com',
+			url: 'https://github.com/example/repo/issues',
 		})
 	})
 
@@ -50,63 +51,63 @@ describe('PackageJson Structure', () => {
 
 	it('should define correct structure for dependencies', () => {
 		const dependencies: Dependencies = {
-			typescript: '^4.0.0',
 			jest: '^26.6.0',
+			typescript: '^4.0.0',
 		}
 		expect(dependencies).toEqual({
-			typescript: '^4.0.0',
 			jest: '^26.6.0',
+			typescript: '^4.0.0',
 		})
 	})
 
 	it('should define correct structure for PackageJsonType', () => {
 		const packageJson: PackageJson = {
-			name: '@example/package',
-			version: '1.0.0',
-			description: 'An example package',
 			author: {
-				name: 'John Doe',
 				email: 'johndoe@example.com',
-			},
-			repository: {
-				type: 'git',
-				url: 'https://github.com/example/repo.git',
-			},
-			license: 'MIT',
-			scripts: {
-				build: 'tsc',
-				test: 'jest',
+				name: 'John Doe',
 			},
 			dependencies: {
 				typescript: '^4.0.0',
 			},
+			description: 'An example package',
 			devDependencies: {
 				jest: '^26.6.0',
 			},
+			license: 'MIT',
+			name: '@example/package',
+			repository: {
+				type: 'git',
+				url: 'https://github.com/example/repo.git',
+			},
+			scripts: {
+				build: 'tsc',
+				test: 'jest',
+			},
+			version: '1.0.0',
 		}
 		expect(packageJson).toEqual({
-			name: '@example/package',
-			version: '1.0.0',
-			description: 'An example package',
 			author: {
-				name: 'John Doe',
 				email: 'johndoe@example.com',
-			},
-			repository: {
-				type: 'git',
-				url: 'https://github.com/example/repo.git',
-			},
-			license: 'MIT',
-			scripts: {
-				build: 'tsc',
-				test: 'jest',
+				name: 'John Doe',
 			},
 			dependencies: {
 				typescript: '^4.0.0',
 			},
+			description: 'An example package',
 			devDependencies: {
 				jest: '^26.6.0',
 			},
+			license: 'MIT',
+			name: '@example/package',
+			repository: {
+				type: 'git',
+				url: 'https://github.com/example/repo.git',
+			},
+			scripts: {
+				build: 'tsc',
+				test: 'jest',
+			},
+			version: '1.0.0',
 		})
 	})
 })

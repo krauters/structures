@@ -1,8 +1,20 @@
-import { describe, it, expect } from '@jest/globals'
-import { Env, HttpStatus, HttpMethod, HttpContentType, FileExtension, FileEncoding, LanguageCode, Status, ResponseType } from '../src/index'
+/* eslint-disable @typescript-eslint/naming-convention */
+import { describe, expect, it } from '@jest/globals'
 
+import {
+	Env,
+	FileEncoding,
+	FileExtension,
+	HttpContentType,
+	HttpMethod,
+	HttpStatus,
+	LanguageCode,
+	ResponseType,
+	Status,
+} from '../src/index'
+
+// eslint-disable-next-line max-lines-per-function
 describe('Enums', () => {
-
 	it('should define all values for Env enum', () => {
 		expect(Env).toEqual({
 			Alpha: 'Alpha',
@@ -16,9 +28,7 @@ describe('Enums', () => {
 	})
 
 	it('should define all values for HttpStatus enum', () => {
-		const filteredHttpStatus = Object.fromEntries(
-			Object.entries(HttpStatus).filter(([key]) => isNaN(Number(key)))
-		)
+		const filteredHttpStatus = Object.fromEntries(Object.entries(HttpStatus).filter(([key]) => isNaN(Number(key))))
 		expect(filteredHttpStatus).toEqual({
 			Accepted: 202,
 			BadGateway: 502,
@@ -48,102 +58,101 @@ describe('Enums', () => {
 
 	it('should define all values for HttpMethod enum', () => {
 		expect(HttpMethod).toEqual({
+			DELETE: 'DELETE',
 			GET: 'GET',
+			HEAD: 'HEAD',
+			OPTIONS: 'OPTIONS',
+			PATCH: 'PATCH',
 			POST: 'POST',
 			PUT: 'PUT',
-			DELETE: 'DELETE',
-			PATCH: 'PATCH',
-			OPTIONS: 'OPTIONS',
-			HEAD: 'HEAD',
 		})
 	})
 
 	it('should define all values for HttpContentType enum', () => {
 		expect(HttpContentType).toEqual({
-			Json: 'application/json',
-			Xml: 'application/xml',
+			Css: 'text/css',
 			FormUrlEncoded: 'application/x-www-form-urlencoded',
+			Html: 'text/html',
+			Javascript: 'application/javascript',
+			Json: 'application/json',
 			MultipartFormData: 'multipart/form-data',
 			TextPlain: 'text/plain',
-			Html: 'text/html',
-			Css: 'text/css',
-			Javascript: 'application/javascript',
+			Xml: 'application/xml',
 		})
 	})
 
 	it('should define all values for FileExtension enum', () => {
 		expect(FileExtension).toEqual({
-			CSV: 'csv',
-			JSON: 'json',
-			XML: 'xml',
-			PDF: 'pdf',
-			DOCX: 'docx',
-			PNG: 'png',
-			JPG: 'jpg',
-			TXT: 'txt',
-			HTML: 'html',
 			CSS: 'css',
+			CSV: 'csv',
+			DLL: 'dll',
+			DOCX: 'docx',
+			EXE: 'exe',
+			HTML: 'html',
+			JPG: 'jpg',
 			JS: 'js',
-			TS: 'ts',
+			JSON: 'json',
+			MKV: 'mkv',
 			MP3: 'mp3',
 			MP4: 'mp4',
-			MKV: 'mkv',
-			ZIP: 'zip',
+			PDF: 'pdf',
+			PNG: 'png',
 			RAR: 'rar',
-			EXE: 'exe',
-			DLL: 'dll',
+			TS: 'ts',
+			TXT: 'txt',
+			XML: 'xml',
+			ZIP: 'zip',
 		})
 	})
 
 	it('should define all values for FileEncoding enum', () => {
 		expect(FileEncoding).toEqual({
-			UTF8: 'utf-8',
 			ASCII: 'ascii',
 			Base64: 'base64',
-			Hex: 'hex',
 			Binary: 'binary',
+			Hex: 'hex',
+			ISO88591: 'iso-8859-1',
+			ISO88592: 'iso-8859-2',
 			UCS2: 'ucs2',
 			UTF16LE: 'utf16le',
 			UTF32: 'utf32',
-			ISO88591: 'iso-8859-1',
-			ISO88592: 'iso-8859-2',
+			UTF8: 'utf-8',
 			Windows1252: 'windows-1252',
 		})
 	})
 
 	it('should define all values for LanguageCode enum', () => {
 		expect(LanguageCode).toEqual({
+			Chinese: 'zh',
 			English: 'en',
-			Spanish: 'es',
 			French: 'fr',
 			German: 'de',
-			Chinese: 'zh',
 			Hindi: 'hi',
+			Spanish: 'es',
 		})
 	})
 
 	it('should define all values for Status enum', () => {
 		expect(Status).toEqual({
 			Active: 'Active',
-			Inactive: 'Inactive',
-			Pending: 'Pending',
+			Canceled: 'Canceled',
 			Completed: 'Completed',
 			Failed: 'Failed',
-			Canceled: 'Canceled',
+			Inactive: 'Inactive',
+			Pending: 'Pending',
 			Suspended: 'Suspended',
 		})
 	})
 
 	it('should define all values for ResponseType enum', () => {
 		expect(ResponseType).toEqual({
-			Json: 'json',
-			Text: 'text',
-			Blob: 'blob',
 			ArrayBuffer: 'arraybuffer',
-			Stream: 'stream',
+			Blob: 'blob',
 			Document: 'document',
 			FormData: 'formdata',
+			Json: 'json',
+			Stream: 'stream',
+			Text: 'text',
 		})
 	})
-
 })

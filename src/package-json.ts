@@ -1,3 +1,29 @@
+export type Bin = Record<string, string>
+
+export type Browser = Record<string, string>
+
+export interface Bugs {
+	email?: string
+	url?: string
+}
+
+export type Dependencies = Record<string, string>
+
+export interface Directories {
+	bin?: string
+	doc?: string
+	example?: string
+	lib?: string
+	man?: string
+}
+
+export interface Engines {
+	[engine: string]: string | undefined
+	node?: string
+	npm?: string
+	yarn?: string
+}
+
 export interface PackageJson {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	[key: string]: any
@@ -35,43 +61,10 @@ export interface PackageJson {
 	version: string
 }
 
-export interface Bugs {
-	email?: string
-	url?: string
-}
-
 export interface Person {
 	email?: string
 	name?: string
 	url?: string
-}
-
-export interface Repository {
-	type: string
-	url: string
-}
-
-export type Scripts = Record<string, string>
-
-export type Dependencies = Record<string, string>
-
-export type Browser = Record<string, string>
-
-export type Bin = Record<string, string>
-
-export interface Directories {
-	bin?: string
-	doc?: string
-	example?: string
-	lib?: string
-	man?: string
-}
-
-export interface Engines {
-	[engine: string]: string | undefined
-	node?: string
-	npm?: string
-	yarn?: string
 }
 
 export interface PublishConfig {
@@ -80,3 +73,10 @@ export interface PublishConfig {
 	access?: 'public' | 'restricted'
 	registry?: string
 }
+
+export interface Repository {
+	type: string
+	url: string
+}
+
+export type Scripts = Record<string, string>
