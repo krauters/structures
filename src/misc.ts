@@ -8,6 +8,63 @@ export enum Env {
 	Unknown = 'Unknown',
 }
 
+export enum FileEncoding {
+	ASCII = 'ascii',
+	Base64 = 'base64',
+	Binary = 'binary',
+	Hex = 'hex',
+	ISO88591 = 'iso-8859-1',
+	ISO88592 = 'iso-8859-2',
+	UCS2 = 'ucs2',
+	UTF16LE = 'utf16le',
+	UTF32 = 'utf32',
+	UTF8 = 'utf8',
+	Windows1252 = 'windows-1252',
+}
+
+export enum FileExtension {
+	CSS = 'css',
+	CSV = 'csv',
+	DLL = 'dll',
+	DOCX = 'docx',
+	EXE = 'exe',
+	HTML = 'html',
+	JPG = 'jpg',
+	JS = 'js',
+	JSON = 'json',
+	MKV = 'mkv',
+	MP3 = 'mp3',
+	MP4 = 'mp4',
+	PDF = 'pdf',
+	PNG = 'png',
+	RAR = 'rar',
+	TS = 'ts',
+	TXT = 'txt',
+	XML = 'xml',
+	ZIP = 'zip',
+}
+
+export enum HttpContentType {
+	Css = 'text/css',
+	FormUrlEncoded = 'application/x-www-form-urlencoded',
+	Html = 'text/html',
+	Javascript = 'application/javascript',
+	Json = 'application/json',
+	MultipartFormData = 'multipart/form-data',
+	TextPlain = 'text/plain',
+	Xml = 'application/xml',
+}
+
+export enum HttpMethod {
+	DELETE = 'DELETE',
+	GET = 'GET',
+	HEAD = 'HEAD',
+	OPTIONS = 'OPTIONS',
+	PATCH = 'PATCH',
+	POST = 'POST',
+	PUT = 'PUT',
+}
+
 export enum HttpStatus {
 	Accepted = 202,
 	BadGateway = 502,
@@ -34,63 +91,6 @@ export enum HttpStatus {
 	UnavailableForLegalReasons = 451,
 }
 
-export enum HttpMethod {
-	DELETE = 'DELETE',
-	GET = 'GET',
-	HEAD = 'HEAD',
-	OPTIONS = 'OPTIONS',
-	PATCH = 'PATCH',
-	POST = 'POST',
-	PUT = 'PUT',
-}
-
-export enum HttpContentType {
-	Css = 'text/css',
-	FormUrlEncoded = 'application/x-www-form-urlencoded',
-	Html = 'text/html',
-	Javascript = 'application/javascript',
-	Json = 'application/json',
-	MultipartFormData = 'multipart/form-data',
-	TextPlain = 'text/plain',
-	Xml = 'application/xml',
-}
-
-export enum FileExtension {
-	CSS = 'css',
-	CSV = 'csv',
-	DLL = 'dll',
-	DOCX = 'docx',
-	EXE = 'exe',
-	HTML = 'html',
-	JPG = 'jpg',
-	JS = 'js',
-	JSON = 'json',
-	MKV = 'mkv',
-	MP3 = 'mp3',
-	MP4 = 'mp4',
-	PDF = 'pdf',
-	PNG = 'png',
-	RAR = 'rar',
-	TS = 'ts',
-	TXT = 'txt',
-	XML = 'xml',
-	ZIP = 'zip',
-}
-
-export enum FileEncoding {
-	ASCII = 'ascii',
-	Base64 = 'base64',
-	Binary = 'binary',
-	Hex = 'hex',
-	ISO88591 = 'iso-8859-1',
-	ISO88592 = 'iso-8859-2',
-	UCS2 = 'ucs2',
-	UTF16LE = 'utf16le',
-	UTF32 = 'utf32',
-	UTF8 = 'utf8',
-	Windows1252 = 'windows-1252',
-}
-
 export enum LanguageCode {
 	Chinese = 'zh',
 	English = 'en',
@@ -98,6 +98,16 @@ export enum LanguageCode {
 	German = 'de',
 	Hindi = 'hi',
 	Spanish = 'es',
+}
+
+export enum ResponseType {
+	ArrayBuffer = 'arraybuffer',
+	Blob = 'blob',
+	Document = 'document',
+	FormData = 'formdata',
+	Json = 'json',
+	Stream = 'stream',
+	Text = 'text',
 }
 
 export enum Status {
@@ -110,12 +120,6 @@ export enum Status {
 	Suspended = 'Suspended',
 }
 
-export enum ResponseType {
-	ArrayBuffer = 'arraybuffer',
-	Blob = 'blob',
-	Document = 'document',
-	FormData = 'formdata',
-	Json = 'json',
-	Stream = 'stream',
-	Text = 'text',
-}
+// Some folks like to use Env/Environment, others prefer Stage...
+export { Env as Environment }
+export { Env as Stage }
